@@ -9,14 +9,19 @@ class App extends Component {
     return (
       <Router basename={process.env.PUBLIC_URL}>
         <div>
-          <NavigationBar
-            routes={routes.filter(route => route.navbar === true)}
-          />
+          <NavigationBar routes={routes.filter(({ navbar }) => navbar)} />
 
           <Switch>
-            {routes.map(({ path, component, exact }, i) => (
-              <Route key={i} path={path} exact={exact} component={component} />
-            ))}
+            {routes
+              .filter(({ external }) => !external)
+              .map(({ path, component, exact }, i) => (
+                <Route
+                  key={i}
+                  path={path}
+                  exact={exact}
+                  component={component}
+                />
+              ))}
           </Switch>
         </div>
       </Router>

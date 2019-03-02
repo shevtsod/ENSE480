@@ -8,11 +8,15 @@ const NavigationBar = props => {
   return (
     <nav>
       {routes
-        .map(({ path, label }, i) => (
-          <Link key={i} to={path}>
-            {label}
-          </Link>
-        ))
+        .map(({ path, label, external }, i) =>
+          external ? (
+            <a href={path}>{label}</a>
+          ) : (
+            <Link key={i} to={path}>
+              {label}
+            </Link>
+          )
+        )
         .reduce((res, el, i) => [
           res,
           <span key={`divider-${i}`}>{divider}</span>,
@@ -26,8 +30,9 @@ NavigationBar.propTypes = {
   divider: PropTypes.string.isRequired,
   routes: PropTypes.arrayOf(
     PropTypes.shape({
-      path: PropTypes.string,
-      label: PropTypes.string
+      path: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      external: PropTypes.boolean
     })
   ).isRequired
 }

@@ -35,7 +35,7 @@ const About = () => {
           </a>
         </li>
         <li>
-          <b>DonvnetJS: </b>
+          <b>ConvnetJS: </b>
           <a href='https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html'>
             https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html
           </a>
