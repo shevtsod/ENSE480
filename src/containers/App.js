@@ -7,7 +7,7 @@ import NavigationBar from '../components/NavigationBar'
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div>
           <NavigationBar
             routes={routes.filter(route => route.navbar === true)}
