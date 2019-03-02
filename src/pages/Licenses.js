@@ -2,6 +2,15 @@ import React from 'react'
 
 let licenses = [
   {
+    name: 'gh-pages',
+    link: 'https://github.com/tschaub/gh-pages',
+    license: () => (
+      <>
+        <p>MIT License</p>
+      </>
+    )
+  },
+  {
     name: 'normalize.css',
     link: 'https://github.com/necolas/normalize.css',
     license: () => (
