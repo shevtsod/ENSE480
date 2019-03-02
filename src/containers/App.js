@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import routes from '../routes'
 import NavigationBar from '../components/NavigationBar'
+import Page from '../components/Page'
 
 class App extends Component {
   render() {
     return (
       <Router basename={process.env.PUBLIC_URL}>
-        <div>
+        <Page>
           <NavigationBar routes={routes.filter(({ navbar }) => navbar)} />
 
           <Switch>
@@ -23,7 +24,7 @@ class App extends Component {
                 />
               ))}
           </Switch>
-        </div>
+        </Page>
       </Router>
     )
   }

@@ -1,22 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom'
 
-const NavigationBar = props => {
-  const { divider, routes } = props
+// Create internal or external link based on external prop
+const Link = ({ external, path, label }) => {
+  return external ? (
+    <a href={path}>{label}</a>
+  ) : (
+    <RouterLink to={path}>{label}</RouterLink>
+  )
+}
 
+const NavigationBar = ({ divider, routes }) => {
   return (
     <nav>
       {routes
-        .map(({ path, label, external }, i) =>
-          external ? (
-            <a href={path}>{label}</a>
-          ) : (
-            <Link key={i} to={path}>
-              {label}
-            </Link>
-          )
-        )
+        .map((props, i) => <Link key={i} {...props} />)
         .reduce((res, el, i) => [
           res,
           <span key={`divider-${i}`}>{divider}</span>,

@@ -5,7 +5,7 @@ const Username = () => <a href='https://github.com/shevtsod'>@shevtsod</a>
 
 const About = () => {
   return (
-    <div>
+    <>
       <h1>About</h1>
 
       <p>
@@ -45,7 +45,7 @@ const About = () => {
       <h2>
         <Link to='/licenses/'>Open Source Licenses</Link>
       </h2>
-    </div>
+    </>
   )
 }
 
