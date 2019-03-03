@@ -21,10 +21,10 @@ export const StyledLink = link => styled(link)`
   text-decoration: none;
 
   &:hover {
-    color: ${({ theme }) => darken(0.1, theme.primaryText)};
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
   &:active {
-    color: ${({ theme }) => darken(0.2, theme.primaryText)};
+    background-color: rgba(0, 0, 0, 0.2);
   }
 `

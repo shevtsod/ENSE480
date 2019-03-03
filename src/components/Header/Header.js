@@ -3,10 +3,12 @@ import PropTypes from 'prop-types'
 import Headroom from 'headroom.js'
 import { Link as RouterLink } from 'react-router-dom'
 
-import { StyledHeader, StyledTitle } from './Header.style'
+import { StyledHeader, StyledTitle, StyledLogo } from './Header.style'
 
 import withConfig from '../../hoc/withConfig'
 import NavBar from '../NavBar'
+
+import Logo from '../../assets/logo-32x32.png'
 
 const StyledHeaderTitle = StyledTitle(RouterLink)
 
@@ -33,6 +35,7 @@ export class Header extends Component {
     return (
       <StyledHeader className={className} ref={this.headerRef}>
         <StyledHeaderTitle to='/'>
+          <StyledLogo src={Logo} alt='Logo' />
           <span>{name}</span>
         </StyledHeaderTitle>
 

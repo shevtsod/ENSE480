@@ -26,6 +26,10 @@ export const StyledHeader = styled.header`
   }
 `
 
+export const StyledLogo = styled.img`
+  padding: 8px;
+`
+
 export const StyledTitle = title => styled(title)`
   height: 100%;
 
@@ -39,10 +43,10 @@ export const StyledTitle = title => styled(title)`
   color: ${({ theme }) => theme.primaryText};
 
   &:hover {
-    color: ${({ theme }) => darken(0.1, theme.primaryText)};
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
   &:active {
-    color: ${({ theme }) => darken(0.2, theme.primaryText)};
+    background-color: rgba(0, 0, 0, 0.2);
   }
 `
