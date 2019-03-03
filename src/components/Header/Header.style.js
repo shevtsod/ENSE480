@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { darken } from 'polished'
 
 export const StyledHeader = styled.header`
   height: 64px;
