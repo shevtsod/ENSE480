@@ -1,22 +1,26 @@
 // Routes
 import Home from './pages/Home'
-import Debug from './pages/Debug'
 import About from './pages/About'
 import NotFound from './pages/NotFound'
 import Licenses from './pages/Licenses'
 
+/*
+Application routes
+
+  path         - Route URL
+  exact        - Only loads route if location is matched exactly
+  component    - Component that will handle this route (only internal)
+  label        - Display name for the route
+  navbar       - Determines whether the route should be displayed in the primary
+                 application navigation bar
+  external     - Specifies that the route is an external URL
+*/
 export default [
   {
     path: '/',
-    component: Home,
     exact: true,
+    component: Home,
     label: 'Home',
-    navbar: true
-  },
-  {
-    path: '/debug/',
-    component: Debug,
-    label: 'Debug',
     navbar: true
   },
   {
@@ -28,8 +32,8 @@ export default [
   {
     path: 'https://github.com/shevtsod/ENSE480',
     label: 'GitHub',
-    external: true,
-    navbar: true
+    navbar: true,
+    external: true
   },
   {
     path: '/licenses',

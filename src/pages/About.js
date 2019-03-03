@@ -1,16 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
-const Username = () => <a href='https://github.com/shevtsod'>@shevtsod</a>
+import withConfig from '../hoc/withConfig'
+import Block from '../components/Block'
 
-const About = () => {
+const GitHubLink = ({ username, url }) => <a href={url}>{username}</a>
+
+export const About = ({ config }) => {
+  const { author } = config
+
   return (
-    <>
+    <Block>
       <h1>About</h1>
 
       <p>
-        This is a project by Daniel Shevtsov (<Username />) for ENSE 480
-        (Knowledge Base and Information Systems) at the University of Regina.
+        This is a project by Daniel Shevtsov (
+        <GitHubLink username={author.github.username} url={author.github.url} />
+        ) for ENSE 480 (Knowledge Base and Information Systems) at the
+        University of Regina.
       </p>
 
       <p>
@@ -45,8 +53,12 @@ const About = () => {
       <h2>
         <Link to='/licenses/'>Open Source Licenses</Link>
       </h2>
-    </>
+    </Block>
   )
 }
 
-export default About
+About.propTypes = {
+  config: PropTypes.object.isRequired
+}
+
+export default withConfig(About)
