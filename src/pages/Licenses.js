@@ -9,7 +9,7 @@ const Licenses = () => {
     <Block>
       <h1>Open Source Licenses</h1>
 
-      {licenses.map(({ name, link = '#', license: License }, i) => (
+      {licenses.map(({ name, link = '#', license }, i) => (
         <div key={i}>
           <h2>
             <a href={link} target='_blank' rel='noopener noreferrer'>
@@ -17,7 +17,7 @@ const Licenses = () => {
             </a>
           </h2>
 
-          <License />
+          {license}
         </div>
       ))}
     </Block>

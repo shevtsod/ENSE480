@@ -44,7 +44,7 @@ NavBar.propTypes = {
   routes: PropTypes.arrayOf(
     PropTypes.shape({
       path: PropTypes.string,
-      label: PropTypes.string,
+      label: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
       external: PropTypes.boolean
     })
   ).isRequired,

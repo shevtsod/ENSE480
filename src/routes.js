@@ -1,3 +1,6 @@
+import React from 'react'
+import { IoLogoGithub } from 'react-icons/io'
+
 // Routes
 import Home from './pages/Home'
 import About from './pages/About'
@@ -31,7 +34,7 @@ export default [
   },
   {
     path: 'https://github.com/shevtsod/ENSE480',
-    label: 'GitHub',
+    label: <IoLogoGithub size={'2em'} />,
     navbar: true,
     external: true
   },
