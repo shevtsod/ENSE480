@@ -14,7 +14,7 @@ export default {
   theme: {
     primary: '#732C2C',
     secondary: '#33090F',
-    tertiary: '#FCAA67',
+    tertiary: '#AAAAAA',
     primaryText: '#ffffff',
     secondaryText: '#ffffff',
     tertiaryText: '#000000'

@@ -1,14 +1,19 @@
 import React from 'react'
 
 import Block from '../components/Block'
+import Visualizer from '../containers/Visualizer'
 
-const Home = () => {
+export const Home = () => {
   return (
-    <Block>
-      <h1>Home</h1>
+    <>
+      <Block backgroundColor='tertiary'>
+        <Visualizer />
+      </Block>
 
-      <p>Work in Progress!</p>
-    </Block>
+      <Block>
+        <p>Work in Progress!</p>
+      </Block>
+    </>
   )
 }
 

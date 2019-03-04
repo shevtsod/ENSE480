@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
-export const StyledBlock = styled.section``
+export const StyledBlock = styled.section`
+  background-color: ${({ theme, backgroundColor }) =>
+    theme[backgroundColor] || backgroundColor || 'transparent'};
+`
 
 export const StyledBlockContent = styled.div`
   max-width: 1000px;
