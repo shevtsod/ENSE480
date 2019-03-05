@@ -4,10 +4,10 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
-import { loadConfig } from '../redux/actions/config'
-import { loadRoutes } from '../redux/actions/routes'
+import { loadConfig } from '../../redux/actions/config'
+import { loadRoutes } from '../../redux/actions/routes'
 
-import Layout from '../components/Layout'
+import Layout from '../../components/Layout'
 
 export const ConfigContext = React.createContext({})
 export const RoutesContext = React.createContext({})

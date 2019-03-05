@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { StyledFooter, StyledFooterContent } from './Footer.style'
+import { StyledFooter, StyledFooterContent } from './style'
 
 import withConfig from '../../hoc/withConfig'
 

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link as RouterLink, withRouter } from 'react-router-dom'
 
-import { StyledNavBar, StyledLink } from './NavBar.style'
+import { StyledNavBar, StyledLink } from './style'
 
 import withRoutes from '../../hoc/withRoutes'
 

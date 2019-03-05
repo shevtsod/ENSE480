@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { StyledBlock, StyledBlockContent } from './Block.style'
+import { StyledBlock, StyledBlockContent } from './style'
 
 const Block = ({ className, children, backgroundColor }) => {
   return (

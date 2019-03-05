@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Headroom from 'headroom.js'
 import { Link as RouterLink } from 'react-router-dom'
 
-import { StyledHeader, StyledTitle, StyledLogo } from './Header.style'
+import { StyledHeader, StyledTitle, StyledLogo } from './style'
 
 import withConfig from '../../hoc/withConfig'
 import NavBar from '../NavBar'

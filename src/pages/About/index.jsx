@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-import withConfig from '../hoc/withConfig'
-import Block from '../components/Block'
+import withConfig from '../../hoc/withConfig'
+import Block from '../../components/Block'
 
 export const About = ({ config }) => {
   const { repository, author } = config

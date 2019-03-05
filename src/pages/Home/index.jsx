@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Block from '../components/Block'
-import Visualizer from '../containers/Visualizer'
+import Block from '../../components/Block'
+import Visualizer from '../../components/Visualizer'
 
 export const Home = () => {
   return (

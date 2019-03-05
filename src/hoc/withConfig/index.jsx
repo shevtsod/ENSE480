@@ -1,5 +1,5 @@
 import React from 'react'
-import { ConfigContext } from '../containers/App'
+import { ConfigContext } from '../../containers/App'
 
 /*
 HOC that returns a component with config as a prop

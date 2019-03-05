@@ -1,8 +1,8 @@
 import React from 'react'
 
-import licenses from '../licenses'
+import licenses from '../../licenses'
 
-import Block from '../components/Block'
+import Block from '../../components/Block'
 
 const Licenses = () => {
   return (

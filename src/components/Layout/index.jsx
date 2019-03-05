@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { StyledLayout, StyledGridArea } from './Layout.style'
+import { StyledLayout, StyledGridArea } from './style'
 
 import Header from '../Header'
 import Footer from '../Footer'

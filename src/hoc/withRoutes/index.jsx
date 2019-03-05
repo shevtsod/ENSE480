@@ -1,5 +1,5 @@
 import React from 'react'
-import { RoutesContext } from '../containers/App'
+import { RoutesContext } from '../../containers/App'
 
 /*
 HOC that returns a component with routes as a prop
