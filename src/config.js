@@ -10,13 +10,18 @@ export default {
     }
   },
 
-  // Application-wide colour theme
+  // Application-wide theme
   theme: {
-    primary: '#732C2C',
-    secondary: '#33090F',
-    tertiary: '#AAAAAA',
-    primaryText: '#ffffff',
-    secondaryText: '#ffffff',
-    tertiaryText: '#000000'
+    palette: {
+      primary: '#732C2C',
+      secondary: '#33090F',
+      tertiary: '#AAAAAA',
+      primaryText: '#ffffff',
+      secondaryText: '#ffffff',
+      tertiaryText: '#000000'
+    },
+    sizes: {
+      mobile: '768px'
+    }
   }
 }
