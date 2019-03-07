@@ -18,6 +18,7 @@ export const Navbar = ({ className, routes, location }) => {
             key={i}
             path={path}
             active={pathname === path}
+            inline={false}
             {...props}
           />
         ))}

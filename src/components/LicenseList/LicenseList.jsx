@@ -1,16 +1,7 @@
 import React from 'react'
+import License from './License/License'
 
 const Licenses = ({ licenses }) =>
-  licenses.map(({ name, link = '#', license }, i) => (
-    <div key={i}>
-      <h2>
-        <a href={link} target='_blank' rel='noopener noreferrer'>
-          {name}
-        </a>
-      </h2>
-
-      {license}
-    </div>
-  ))
+  licenses.map((props, i) => <License key={i} {...props} />)
 
 export default Licenses

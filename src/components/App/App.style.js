@@ -3,6 +3,7 @@ import { normalize } from 'polished'
 
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto');
+  @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
   * {
     box-sizing: border-box;

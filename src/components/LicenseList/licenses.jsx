@@ -4,7 +4,7 @@ export default [
   {
     name: 'd3',
     link: 'https://github.com/d3/d3',
-    license: (
+    copyrightText: (
       <>
         <p>
           Copyright 2010-2017 Mike Bostock
@@ -76,7 +76,7 @@ export default [
   {
     name: 'gh-pages',
     link: 'https://github.com/tschaub/gh-pages',
-    license: (
+    copyrightText: (
       <>
         <p>MIT License</p>
       </>
@@ -85,7 +85,7 @@ export default [
   {
     name: 'headroom.js',
     link: 'https://github.com/WickyNilliams/headroom.js',
-    license: (
+    copyrightText: (
       <>
         <p>The MIT License (MIT)</p>
         <p>Copyright (c) 2013 Nick Williams</p>
@@ -136,63 +136,9 @@ export default [
     )
   },
   {
-    name: 'normalize.css',
-    link: 'https://github.com/necolas/normalize.css',
-    license: (
-      <>
-        <p>The MIT License (MIT)</p>
-        <p>Copyright &copy; Nicolas Gallagher and Jonathan Neal</p>
-        <p>
-          Permission is hereby granted, free of charge, to any person obtaining
-          a copy of
-          <br />
-          this software and associated documentation files (the "Software"), to
-          deal in
-          <br />
-          the Software without restriction, including without limitation the
-          rights to
-          <br />
-          use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-          copies
-          <br />
-          of the Software, and to permit persons to whom the Software is
-          furnished to do
-          <br />
-          so, subject to the following conditions:
-        </p>
-        <p>
-          The above copyright notice and this permission notice shall be
-          included in all
-          <br />
-          copies or substantial portions of the Software.
-        </p>
-        <p>
-          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-          EXPRESS OR
-          <br />
-          IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-          MERCHANTABILITY,
-          <br />
-          FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
-          SHALL THE
-          <br />
-          AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-          <br />
-          LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-          ARISING FROM,
-          <br />
-          OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-          IN THE
-          <br />
-          SOFTWARE.
-        </p>
-      </>
-    )
-  },
-  {
     name: 'polished',
     link: 'https://github.com/styled-components/polished',
-    license: (
+    copyrightText: (
       <>
         <p>MIT License</p>
         <p>Copyright (c) 2016 - 2018 Brian Hough and Maximilian Stoiber</p>
@@ -245,7 +191,7 @@ export default [
   {
     name: 'react',
     link: 'https://github.com/facebook/react',
-    license: (
+    copyrightText: (
       <>
         <p>MIT License</p>
         <p>Copyright (c) Facebook, Inc. and its affiliates.</p>
@@ -298,7 +244,7 @@ export default [
   {
     name: 'react-icons',
     link: 'https://github.com/react-icons/react-icons',
-    license: (
+    copyrightText: (
       <>
         <p>Copyright 2018 kamijin_fanta &lt;kamijin@live.jp&gt;</p>
         <p>
@@ -336,7 +282,7 @@ export default [
   {
     name: 'react-redux',
     link: 'https://github.com/reduxjs/react-redux',
-    license: (
+    copyrightText: (
       <>
         <p>The MIT License (MIT)</p>
         <p>Copyright (c) 2015-present Dan Abramov</p>
@@ -389,7 +335,7 @@ export default [
   {
     name: 'react-router',
     link: 'https://github.com/ReactTraining/react-router',
-    license: (
+    copyrightText: (
       <>
         <p>MIT License</p>
         <p>Copyright (c) React Training 2016-2018</p>
@@ -442,7 +388,7 @@ export default [
   {
     name: 'redux',
     link: 'https://github.com/reduxjs/redux',
-    license: (
+    copyrightText: (
       <>
         <p>The MIT License (MIT)</p>
         <p>Copyright (c) 2015-present Dan Abramov</p>
@@ -495,7 +441,7 @@ export default [
   {
     name: 'styled-components',
     link: 'https://github.com/styled-components/styled-components',
-    license: (
+    copyrightText: (
       <>
         <p>MIT License</p>
         <p>Copyright (c) 2016-present Glen Maddern and Maximilian Stoiber</p>

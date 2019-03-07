@@ -5,7 +5,17 @@ import * as Icons from 'react-icons/io'
 
 import * as Styled from './Link.style'
 
-const Link = ({ className, active, path, label, icon, external }) => {
+const Link = ({
+  className,
+  active,
+  path,
+  label,
+  icon,
+  external,
+  target,
+  rel,
+  inline
+}) => {
   const Icon = Icons[icon]
 
   return (
@@ -15,6 +25,9 @@ const Link = ({ className, active, path, label, icon, external }) => {
       active={active ? 1 : 0}
       to={!external ? path : null}
       href={external ? path : null}
+      target={target}
+      rel={rel}
+      inline={inline ? 1 : 0}
     >
       {icon && <Styled.Icon as={Icon} size={30} />}
       <Styled.Label hasIcon={!!icon}>{label}</Styled.Label>
@@ -24,11 +37,18 @@ const Link = ({ className, active, path, label, icon, external }) => {
 
 Link.propTypes = {
   className: PropTypes.string,
+  active: PropTypes.bool,
   path: PropTypes.string.isRequired,
   label: PropTypes.string,
   icon: PropTypes.string,
   external: PropTypes.bool,
-  active: PropTypes.bool
+  target: PropTypes.string,
+  rel: PropTypes.string,
+  inline: PropTypes.bool
+}
+
+Link.defaultProps = {
+  inline: true
 }
 
 export default Link
