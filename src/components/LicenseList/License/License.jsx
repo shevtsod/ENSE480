@@ -1,6 +1,6 @@
 import React from 'react'
 
-import * as Styled from './License.style'
+import * as Styled from './style'
 
 import Link from '../../UI/Link'
 

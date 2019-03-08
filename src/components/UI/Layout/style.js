@@ -5,13 +5,20 @@ export const Layout = styled.div`
 
   display: grid;
   grid-template-areas:
-    'header'
     'main'
     'footer';
   grid-template-columns: 1fr;
-  grid-template-rows: 64px 1fr auto;
+  grid-template-rows: 1fr auto;
 `
 
 export const GridArea = styled.div`
   grid-area: ${({ area }) => area};
+`
+
+export const Main = styled(GridArea).attrs({
+  area: 'main'
+})`
+  > :first-child {
+    padding-top: 64px;
+  }
 `

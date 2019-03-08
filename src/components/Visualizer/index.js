@@ -2,9 +2,16 @@ import { connect } from 'react-redux'
 
 import Visualizer from './Visualizer'
 
-const mapStateToProps = _state => ({})
+import NeuralNetwork from '../../ann'
+import { create } from './reducer'
 
-const mapDispatchToProps = {}
+const mapStateToProps = ({ visualizer }) => ({
+  network: visualizer.network && new NeuralNetwork(visualizer.network)
+})
+
+const mapDispatchToProps = dispatch => ({
+  createNetwork: network => dispatch(create(new NeuralNetwork(network)))
+})
 
 export default connect(
   mapStateToProps,

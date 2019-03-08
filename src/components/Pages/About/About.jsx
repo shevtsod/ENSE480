@@ -35,23 +35,21 @@ export const About = ({ repository }) => {
 
         <ul>
           <li>
-            <b>TensorFlow: </b>
             <a
               href='http://playground.tensorflow.org'
               target='_blank'
               rel='noopener noreferrer'
             >
-              http://playground.tensorflow.org
+              TensorFlow
             </a>
           </li>
           <li>
-            <b>ConvnetJS: </b>
             <a
               href='https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html'
               target='_blank'
               rel='noopener noreferrer'
             >
-              https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html
+              ConvnetJS
             </a>
           </li>
         </ul>
@@ -59,19 +57,11 @@ export const About = ({ repository }) => {
         <h2>Source Code</h2>
 
         <p>
-          The entire source code for this application is available on GitHub at
-          the link below:
-        </p>
-
-        <p>
+          The entire{' '}
           <a href={repository} target='_blank' rel='noopener noreferrer'>
-            {repository}
-          </a>
-        </p>
-
-        <p>
-          Other software projects developed by Daniel Shevtsov are also
-          available on GitHub:
+            source code for this application
+          </a>{' '}
+          is available on GitHub.
         </p>
 
         <p>
@@ -80,8 +70,9 @@ export const About = ({ repository }) => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            https://github.com/shevtsod/
-          </a>
+            Other software projects developed by Daniel Shevtsov
+          </a>{' '}
+          are also available on GitHub.
         </p>
 
         <h2>

@@ -7,12 +7,8 @@ import Visualizer from '../../Visualizer'
 export const Home = () => {
   return (
     <Layout>
-      <Block backgroundColor='tertiary'>
-        <Visualizer />
-      </Block>
-
       <Block>
-        <p>Work in Progress!</p>
+        <Visualizer />
       </Block>
     </Layout>
   )

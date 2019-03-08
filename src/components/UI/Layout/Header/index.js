@@ -2,8 +2,8 @@ import { connect } from 'react-redux'
 
 import Header from './Header'
 
-const mapStateToProps = ({ config }) => ({
-  title: config.name
+const mapStateToProps = ({ app }) => ({
+  title: app.config.name
 })
 
 const mapDispatchToProps = {}

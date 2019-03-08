@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import * as Styled from './Navbar.style'
+import * as Styled from './style'
 
 import Link from '../../../Link'
 

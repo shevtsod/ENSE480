@@ -17,7 +17,9 @@ export const Content = styled.div`
   align-items: center;
 `
 
-export const Link = styled.a`
+export const Title = styled.a`
+  font-size: 24px;
+
   &:hover {
     color: ${({ theme }) => darken(0.1, theme.palette.primaryText)};
   }

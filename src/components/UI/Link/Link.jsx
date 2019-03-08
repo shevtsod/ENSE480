@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link as RouterLink } from 'react-router-dom'
 import * as Icons from 'react-icons/io'
 
-import * as Styled from './Link.style'
+import * as Styled from './style'
 
 const Link = ({
   className,

@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import * as Styled from './Block.style'
+import * as Styled from './style'
 
-const Block = ({ className, children, backgroundColor }) => {
+const Block = ({ className, children }) => {
   return (
-    <Styled.Block className={className} backgroundColor={backgroundColor}>
+    <Styled.Block className={className}>
       <Styled.Content>{children}</Styled.Content>
     </Styled.Block>
   )
@@ -13,8 +13,7 @@ const Block = ({ className, children, backgroundColor }) => {
 
 Block.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node,
-  backgroundColor: PropTypes.string
+  children: PropTypes.node
 }
 
 export default Block

@@ -3,9 +3,9 @@ import { withRouter } from 'react-router-dom'
 
 import Navbar from './Navbar'
 
-const mapStateToProps = ({ config, routes }) => ({
-  title: config.name,
-  routes: routes.filter(({ navbar }) => navbar)
+const mapStateToProps = ({ app }) => ({
+  title: app.config.name,
+  routes: app.routes.filter(({ navbar }) => navbar)
 })
 
 const mapDispatchToProps = {}
