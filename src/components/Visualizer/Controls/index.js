@@ -2,13 +2,22 @@ import { connect } from 'react-redux'
 
 import Controls from './Controls'
 
-import NeuralNetwork from '../../../ann'
+import {
+  controlsPlay,
+  controlsPause,
+  controlsStep
+} from '../../../actions/controls'
 
-const mapStateToProps = ({ network }) => ({
-  network: network && new NeuralNetwork(network)
+const mapStateToProps = ({ network, controls }) => ({
+  epoch: network.epoch,
+  playing: controls.playing
 })
 
-const mapDispatchToProps = () => ({})
+const mapDispatchToProps = dispatch => ({
+  handlePlay: () => dispatch(controlsPlay()),
+  handlePause: () => dispatch(controlsPause()),
+  handleStep: () => dispatch(controlsStep())
+})
 
 export default connect(
   mapStateToProps,

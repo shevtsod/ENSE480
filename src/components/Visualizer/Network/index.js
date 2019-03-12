@@ -4,8 +4,8 @@ import Network from './Network'
 
 import NeuralNetwork from '../../../ann'
 
-const mapStateToProps = ({ visualizer }) => ({
-  network: new NeuralNetwork(visualizer.network)
+const mapStateToProps = ({ network }) => ({
+  network: new NeuralNetwork(network)
 })
 
 const mapDispatchToProps = () => ({})

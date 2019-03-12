@@ -2,8 +2,8 @@ import { connect } from 'react-redux'
 
 import About from './About'
 
-const mapStateToProps = ({ app }) => ({
-  repository: app.config.repository
+const mapStateToProps = ({ config }) => ({
+  repository: config.repository
 })
 
 const mapDispatchToProps = {}

@@ -1,9 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
-import { normalize } from 'polished'
+import { normalize, darken } from 'polished'
 
-export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Roboto');
-  @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+export const Global = createGlobalStyle`
+  /* Roboto Font https://fonts.google.com/specimen/Roboto */
+  @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono');
+
+  ${normalize()}
 
   * {
     box-sizing: border-box;
@@ -13,5 +15,37 @@ export const GlobalStyle = createGlobalStyle`
     font-family: Roboto, sans-serif;
   }
 
-  ${normalize()}
+  button {
+    padding: 0;
+    margin: 0;
+
+    display: inline-block;
+
+    background: ${p => p.theme.palette.primary};
+    color: #ffffff;
+    
+    border: none;
+    
+    cursor: pointer;
+
+    font-family: sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+  button:hover,
+  button:focus {
+      background: ${p => darken(0.1, p.theme.palette.primary)};
+  }
+
+  button:active {
+      transform: scale(0.99);
+  }
 `

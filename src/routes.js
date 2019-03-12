@@ -26,7 +26,7 @@ export default [
     navbar: true
   },
   {
-    path: '/about/',
+    path: '/about',
     component: About,
     icon: 'IoIosInformationCircle',
     label: 'About',

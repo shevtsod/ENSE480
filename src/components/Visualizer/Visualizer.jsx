@@ -1,29 +1,43 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import Network from './Network'
+import Controls from './Controls'
 
-const nodes = [[{}, {}], [{}, {}, {}], [{}, {}, {}, {}], [{}, {}]]
+const Visualizer = ({
+  network,
+  playing,
+  step,
+  handleReset,
+  handleStep,
+  handlePlay
+}) => {
+  // Handle step (run for one epoch)
+  useEffect(() => {
+    console.log(step)
+    step && handleStep(network)
+  }, [step])
 
-export default class Visualizer extends Component {
-  static propTypes = {
-    network: PropTypes.object
-  }
+  // Handle play (run until paused)
+  useEffect(() => {
+    playing && handlePlay(network)
+  })
 
-  componentDidMount() {
-    !this.props.network && this.props.createNetwork({ nodes })
-  }
-
-  componentDidUpdate() {
-    // In development, log the state of the network object on each update
-    process.env.NODE_ENV === 'development' && console.log(this.props.network)
-  }
-
-  render() {
-    return (
-      <div>
-        <Network />
-      </div>
-    )
-  }
+  return (
+    <>
+      <Controls handleReset={handleReset} />
+      <Network />
+    </>
+  )
 }
+
+Visualizer.propTypes = {
+  network: PropTypes.object.isRequired,
+  playing: PropTypes.bool.isRequired,
+  step: PropTypes.bool.isRequired,
+  handleReset: PropTypes.func.isRequired,
+  handleStep: PropTypes.func.isRequired,
+  handlePlay: PropTypes.func.isRequired
+}
+
+export default Visualizer

@@ -2,9 +2,9 @@ import { connect } from 'react-redux'
 
 import App from './App'
 
-const mapStateToProps = ({ app }) => ({
-  config: app.config,
-  routes: app.routes
+const mapStateToProps = ({ config, routes }) => ({
+  config,
+  routes: routes.filter(({ external }) => !external)
 })
 
 const mapDispatchToProps = dispatch => ({})

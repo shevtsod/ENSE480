@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const Layout = styled.div`
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 
   display: grid;
   grid-template-areas:

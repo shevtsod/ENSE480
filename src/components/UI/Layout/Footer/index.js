@@ -2,10 +2,10 @@ import { connect } from 'react-redux'
 
 import Footer from './Footer'
 
-const mapStateToProps = ({ app }) => ({
-  name: app.config.name,
-  homeLink: app.routes.find(({ path }) => path === '/'),
-  authorName: app.config.author.name
+const mapStateToProps = ({ config, routes }) => ({
+  name: config.name,
+  homeLink: routes.find(({ path }) => path === '/'),
+  authorName: config.author.name
 })
 
 const mapDispatchToProps = {}

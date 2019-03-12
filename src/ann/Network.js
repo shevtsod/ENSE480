@@ -1,96 +1,126 @@
-import Node from './Node'
+import Neuron from './Neuron'
 
 /**
- * Implementation of a basic feedforward Neural Network
+ * Implementation of a basic feedforward Neural Network w/ back-propagation
  *
  * @export
  * @class Network
  */
 export default class Network {
-  constructor({ learningRate = 1, nodes, weights, epoch = 0 } = {}) {
+  constructor({ learningRate = 1, neurons, weights, epoch = 0 } = {}) {
+    // Two-dimensional array of layers and neurons in each layer
+    this.neurons = neurons
+    // Array of weight matrices between layers
+    this.weights = weights
+
     // Learning Rate for back-propagation
     this.learningRate = learningRate
+
     // Activation function to pass to neurons
     this.activation = Math.tanh
     // Derivative of activation function
     this.derivative = x => 1 - Math.pow(Math.tanh(x), 2)
+
     // Current epoch (iteration) of the neural network
     this.epoch = epoch
-
-    // Two-dimensional array of layers and neurons
-    this.nodes = this.createNodes(nodes)
-    // Two-dimensional array of weights
-    this.weights = weights || this.createWeights(nodes)
   }
 
   /**
-   * Get an array of nodes in the input layer
+   * Initialize and return a new Network object
    *
-   * @readonly
+   * @static
+   * @param {*} layers
+   * @returns
    * @memberof Network
    */
-  get inputLayer() {
-    return this.nodes[0] || []
+  static initialize(layers) {
+    return new Network({
+      neurons: this.createNeurons(layers),
+      weights: this.createWeights(layers)
+    })
   }
 
   /**
-   * Get an array of the hidden layers (each of which is an array of nodes)
+   * Return an array of neurons from the provided multi-dimensional
+   * array of layers
    *
-   * @readonly
-   * @memberof Network
-   */
-  get hiddenLayers() {
-    return this.nodes.slice(1, this.nodes.length - 1) || []
-  }
-
-  /**
-   * Get an array of nodes in the output layer
-   *
-   * @readonly
-   * @memberof Network
-   */
-  get outputLayer() {
-    return this.nodes[this.nodes.length - 1] || []
-  }
-
-  /**
-   * Return an array of nodes from the provided multi-dimensional array of layers
-   *
+   * @static
    * @param {*} layers
    * @memberof Network
    */
-  createNodes(layers = []) {
-    let index = 0
-    return layers.map(layer =>
-      layer.map(
-        node => new Node(index++, { activation: this.activation, ...node })
+  static createNeurons(layers = []) {
+    return layers
+      .map(layer => Array(layer).fill({}))
+      .map(layer =>
+        layer.map(
+          (node, i) => new Neuron(i, { activation: this.activation, ...node })
+        )
       )
-    )
   }
 
   /**
    * Return an array of weights from the provided multi-dimensional array of layers
    *
+   * @static
    * @param {*} [layers=[]]
    * @memberof Network
    */
-  createWeights(layers = []) {
+  static createWeights(layers = []) {
     const weights = []
 
+    // For every layer
     for (let i = 0; i < layers.length - 1; i++) {
       const current = layers[i],
         next = layers[i + 1]
 
-      const layerWeights = []
+      const weightsLayer = []
 
-      for (let j = 0; j < current.length * next.length; j++) {
-        layerWeights.push(Math.random() * 2 - 1) // Random initial weight
+      // For every node in this layer
+      for (let j = 0; j < current; j++) {
+        const matrix = []
+
+        // For every node in the next layer
+        for (let k = 0; k < next; k++) {
+          matrix[(j, k)] = Math.random() * 2 - 1
+        }
+
+        weightsLayer.push(matrix)
       }
 
-      weights.push(layerWeights)
+      weights.push(weightsLayer)
     }
 
     return weights
+  }
+
+  /**
+   * Get an array of neurons in the input layer
+   *
+   * @readonly
+   * @memberof Network
+   */
+  get inputLayer() {
+    return this.neurons[0] || []
+  }
+
+  /**
+   * Get an array of the hidden layers (each of which is an array of neurons)
+   *
+   * @readonly
+   * @memberof Network
+   */
+  get hiddenLayers() {
+    return this.neurons.slice(1, this.neurons.length - 1) || []
+  }
+
+  /**
+   * Get an array of neurons in the output layer
+   *
+   * @readonly
+   * @memberof Network
+   */
+  get outputLayer() {
+    return this.neurons[this.neurons.length - 1] || []
   }
 
   /**
@@ -112,8 +142,9 @@ export default class Network {
    *
    * @memberof Network
    */
-  runOneEpoch() {
+  runOnce() {
     this.feedForward()
     this.backPropagation()
+    this.epoch++
   }
 }
