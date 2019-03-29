@@ -1,10 +1,14 @@
 import styled from 'styled-components'
 import { lighten } from 'polished'
 
+export const Wrapper = styled.div``
+
 export const Copyright = styled.div`
   padding-left: 32px;
 
   font-family: 'Roboto Mono', monospace;
+
+  overflow-x: auto;
 `
 
 export const Link = styled.a`

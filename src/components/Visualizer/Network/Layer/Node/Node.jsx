@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 import * as Styled from './style'
 
-const Node = ({ node, decimalPrecision }) => (
-  <Styled.Node>
+const Node = ({ className, node, decimalPrecision }) => (
+  <Styled.Node className={className}>
     <Styled.Title>Node {node.id + 1}</Styled.Title>
 
     <Styled.Attributes>
@@ -23,6 +23,7 @@ const Node = ({ node, decimalPrecision }) => (
 )
 
 Node.propTypes = {
+  className: PropTypes.string,
   node: PropTypes.shape({
     id: PropTypes.number,
     bias: PropTypes.number,

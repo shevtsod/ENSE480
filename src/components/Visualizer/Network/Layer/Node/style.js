@@ -28,8 +28,6 @@ export const Attribute = styled.div`
 `
 
 export const AttributeKey = styled.span`
-  margin-right: 25px;
-
   font-weight: bold;
 `
 

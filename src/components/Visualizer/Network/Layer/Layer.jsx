@@ -13,7 +13,12 @@ const Layer = ({ title, nodes }) => {
       <Styled.Title>{title}</Styled.Title>
 
       {nodes.map((node, i) => (
-        <Node key={i} node={node} decimalPrecision={decimalPrecision} />
+        <Styled.Node
+          as={Node}
+          key={i}
+          node={node}
+          decimalPrecision={decimalPrecision}
+        />
       ))}
     </Styled.Layer>
   )

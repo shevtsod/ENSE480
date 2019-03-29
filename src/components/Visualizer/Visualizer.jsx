@@ -12,16 +12,15 @@ const Visualizer = ({
   handleStep,
   handlePlay
 }) => {
-  // Handle step (run for one epoch)
-  useEffect(() => {
-    console.log(step)
-    step && handleStep(network)
-  }, [step])
-
   // Handle play (run until paused)
   useEffect(() => {
     playing && handlePlay(network)
   })
+
+  // Handle step (run for one epoch)
+  useEffect(() => {
+    step && handleStep(network)
+  }, [step])
 
   return (
     <>

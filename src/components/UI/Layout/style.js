@@ -8,8 +8,8 @@ export const Layout = styled.div`
   grid-template-areas:
     'main'
     'footer';
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
 `
 
 export const GridArea = styled.div`

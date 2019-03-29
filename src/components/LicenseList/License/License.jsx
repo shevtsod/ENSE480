@@ -6,7 +6,7 @@ import Link from '../../UI/Link'
 
 const License = ({ link, name, copyrightText }) => {
   return (
-    <div>
+    <Styled.Wrapper>
       <h2>
         <Styled.Link
           as={Link}
@@ -19,7 +19,7 @@ const License = ({ link, name, copyrightText }) => {
       </h2>
 
       <Styled.Copyright>{copyrightText}</Styled.Copyright>
-    </div>
+    </Styled.Wrapper>
   )
 }
 
