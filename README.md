@@ -1,6 +1,8 @@
 # ENSE480
 
 > ### https://shevtsod.github.io/ENSE480/
+>
+> ### Presentation: https://docs.google.com/presentation/d/1lFVJeOdyR56RlrOm1qhXFNpU9dvwfn2DMWmcB3QIJm8/edit?usp=sharing
 
 ENSE 480 (Knowledge Base and Information Systems) - ANN Visualizer Project
 
