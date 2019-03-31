@@ -27,6 +27,6 @@ export default {
 
   // Neural Network settings
   network: {
-    defaultLayers: [2, 3, 4, 2]
+    defaultLayers: [2, 3, 4, 1]
   }
 }
