@@ -9,7 +9,11 @@ export const Layers = styled.div`
   grid-template-rows: auto;
   grid-gap: 8px;
 
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  @media only screen and (max-width: 1024px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 
   @media only screen and (max-width: 768px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));

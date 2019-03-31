@@ -37,16 +37,32 @@ export const LayerTitle = styled.div`
   background-color: ${p => p.theme.palette.primary};
 
   font-weight: bold;
+
+  :hover {
+    background-color: ${p => darken(0.05, p.theme.palette.primary)};
+    transition: background 0.05s;
+  }
+
+  transition: background 0.5s ease-in;
 `
 
 export const LayerWeights = styled.div`
-  width: 100%;
-
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
 `
 
-export const Matrix = styled.div``
+export const Matrix = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
+  padding: 4px;
+  margin: 4px;
+
+  border-radius: 4px;
+
+  background-color: ${p => darken(0.05, p.theme.palette.tertiary)};
+`
 
 export const Weight = styled.div`
   width: 150px;
@@ -60,6 +76,13 @@ export const Weight = styled.div`
   border-radius: 4px;
 
   background-color: ${p => darken(0.1, p.theme.palette.tertiary)};
+
+  :hover {
+    background-color: ${p => darken(0.15, p.theme.palette.tertiary)};
+    transition: background 0.05s;
+  }
+
+  transition: background 0.5s ease-in;
 `
 
 export const WeightKey = styled.span`

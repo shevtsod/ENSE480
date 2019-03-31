@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { darken } from 'polished'
 
 export const Node = styled.div`
   margin: 8px 0;
@@ -8,6 +9,13 @@ export const Node = styled.div`
   border-radius: 8px;
 
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15), 0 6px 6px rgba(0, 0, 0, 0.2);
+
+  :hover {
+    background-color: ${() => darken(0.1, 'white')};
+    transition: background 0.1s;
+  }
+
+  transition: background 0.3s ease-in;
 `
 
 export const Title = styled.h3`
@@ -27,8 +35,11 @@ export const Attribute = styled.div`
   justify-content: space-between;
 `
 
-export const AttributeKey = styled.span`
+export const AttributeKey = styled.div`
   font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 `
 
 export const AttributeValue = styled.span``

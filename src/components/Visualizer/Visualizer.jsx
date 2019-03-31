@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 
 import Network from './Network'
 import Controls from './Controls'
+import Chart from './Chart'
+
+import * as S from './style'
 
 const Visualizer = ({
   network,
@@ -10,22 +13,34 @@ const Visualizer = ({
   step,
   handleReset,
   handleStep,
-  handlePlay
+  handlePlay,
+  datasets,
+  layers
 }) => {
   // Handle play (run until paused)
   useEffect(() => {
-    playing && handlePlay(network)
+    playing && handlePlay(network, datasets.training)
   })
 
   // Handle step (run for one epoch)
   useEffect(() => {
-    step && handleStep(network)
+    step && handleStep(network, datasets.training)
   }, [step])
+
+  // When layers change, reset the network
+  useEffect(() => {
+    handleReset(layers)
+  }, [layers])
 
   return (
     <>
-      <Controls handleReset={handleReset} />
-      <Network />
+      <S.Controls as={Controls} handleReset={handleReset} />
+
+      <S.Graphs>
+        <Chart />
+      </S.Graphs>
+
+      <S.Network as={Network} />
     </>
   )
 }
@@ -36,7 +51,24 @@ Visualizer.propTypes = {
   step: PropTypes.bool.isRequired,
   handleReset: PropTypes.func.isRequired,
   handleStep: PropTypes.func.isRequired,
-  handlePlay: PropTypes.func.isRequired
+  handlePlay: PropTypes.func.isRequired,
+  datasets: PropTypes.shape({
+    training: PropTypes.arrayOf(
+      PropTypes.shape({
+        x: PropTypes.number,
+        y: PropTypes.number,
+        value: PropTypes.number
+      })
+    ),
+    testing: PropTypes.arrayOf(
+      PropTypes.shape({
+        x: PropTypes.number,
+        y: PropTypes.number,
+        value: PropTypes.number
+      })
+    )
+  }).isRequired,
+  layers: PropTypes.arrayOf(PropTypes.number).isRequired
 }
 
 export default Visualizer

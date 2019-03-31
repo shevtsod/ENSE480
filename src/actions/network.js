@@ -24,4 +24,4 @@ export const networkInitialize = (layers = defaultLayers) => {
   return Network.initialize(layers)
 }
 
-export const networkRunOnce = network => network.runOnce()
+export const networkRunOnce = (network, inputs) => network.runOnce(inputs)

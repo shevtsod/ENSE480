@@ -8,9 +8,9 @@ import Weights from './Weights'
 
 const decimalPrecision = 4
 
-const Network = ({ network }) => {
+const Network = ({ className, network }) => {
   return (
-    <Styled.Visualizer>
+    <Styled.Visualizer className={className}>
       <Styled.Layers>
         <Layer title={'Input Layer'} nodes={network.inputLayer} />
 
@@ -27,6 +27,7 @@ const Network = ({ network }) => {
 }
 
 Network.propTypes = {
+  className: PropTypes.string,
   network: PropTypes.object.isRequired
 }
 

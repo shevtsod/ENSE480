@@ -40,12 +40,17 @@ export const Global = createGlobalStyle`
     -moz-appearance: none;
 }
 
-  button:hover,
+  button:hover:not(:disabled),
   button:focus {
       background: ${p => darken(0.1, p.theme.palette.primary)};
   }
 
   button:active {
       transform: scale(0.99);
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+    background-color: grey;
   }
 `

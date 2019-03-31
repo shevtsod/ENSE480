@@ -9,7 +9,7 @@ const Node = ({ className, node, decimalPrecision }) => (
 
     <Styled.Attributes>
       {Object.keys(node)
-        .filter(key => key !== 'id')
+        .filter(key => key !== 'id' && !key.includes('Der'))
         .map((key, i) => (
           <Styled.Attribute key={i}>
             <Styled.AttributeKey>{key}</Styled.AttributeKey>

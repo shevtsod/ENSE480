@@ -27,11 +27,6 @@ export default {
 
   // Neural Network settings
   network: {
-    defaultLayers: [
-      2, // Input Layer
-      3, // Hidden Layer 1
-      4, // Hidden Layer 2
-      2 // Output Layer
-    ]
+    defaultLayers: [2, 3, 4, 2]
   }
 }

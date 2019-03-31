@@ -29,8 +29,8 @@ export const About = ({ repository }) => {
         <h2>Inspirations</h2>
 
         <p>
-          This project is inspired by some other amazing AI projects with
-          similar demos featuring artificial neural networks:
+          This project is inspired by some amazing AI projects with similar
+          demos featuring artificial neural networks:
         </p>
 
         <ul>

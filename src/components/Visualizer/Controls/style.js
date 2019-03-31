@@ -23,6 +23,12 @@ export const Playback = styled.div`
   }
 `
 
+export const Layers = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 export const PrimaryButton = styled.button`
   padding: 8px;
 
@@ -46,5 +52,15 @@ export const SecondaryButtonIcon = styled.div`
   height: 24px;
   width: 24px;
 `
+
+export const LayersText = styled.div``
+
+export const LayersButtons = styled.div`
+  > * {
+    margin: 0 5px;
+  }
+`
+
+export const GlobalError = styled.div``
 
 export const Epoch = styled.div``

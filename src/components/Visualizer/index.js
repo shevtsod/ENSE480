@@ -11,21 +11,30 @@ import {
   networkRunOnce
 } from '../../actions/network'
 import { controlsPause } from '../../actions/controls'
+import { datasetsCreate } from '../../actions/datasets'
 
-const mapStateToProps = ({ network, controls }) => ({
+const mapStateToProps = ({ network, controls, datasets, layers }) => ({
   network: new Network(network),
   playing: controls.playing,
-  step: controls.step
+  step: controls.step,
+  datasets,
+  layers
 })
 
 const mapDispatchToProps = dispatch => ({
-  handleReset: () => dispatch(networkCreate(networkInitialize())),
-  handlePlay: network => {
-    networkRunOnce(network)
+  handleReset: (layers = [], regenerateData = false) => {
+    dispatch(controlsPause())
+    //Re-generate datasets
+    regenerateData && dispatch(datasetsCreate())
+    // Re-create network
+    dispatch(networkCreate(networkInitialize(layers)))
+  },
+  handlePlay: (network, inputs) => {
+    networkRunOnce(network, inputs)
     dispatch(networkUpdate(network))
   },
-  handleStep: network => {
-    networkRunOnce(network)
+  handleStep: (network, inputs) => {
+    networkRunOnce(network, inputs)
     dispatch(networkUpdate(network))
     dispatch(controlsPause())
   }

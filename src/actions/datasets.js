@@ -1,11 +1,13 @@
+import { DatasetGenerator } from '../ann'
+
 export const DATASETS_CREATE = '@@datasets/CREATE'
 
-export const datasetsCreate = ({ learning, testing }) => ({
+export const datasetsCreate = (datasets = {}) => ({
   type: DATASETS_CREATE,
   payload: {
-    datasets: {
-      learning,
-      testing
-    }
+    training:
+      datasets.training || DatasetGenerator.generateCircularDataSet(200, 5),
+    testing:
+      datasets.testing || DatasetGenerator.generateCircularDataSet(200, 5)
   }
 })

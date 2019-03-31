@@ -22,8 +22,8 @@ const Weights = ({ weights, decimalPrecision }) => {
                   {matrix.map((value, k) => (
                     <Styled.Weight key={k}>
                       <Styled.WeightKey>
-                        N{j + 1}
-                        {k + 1}
+                        N{k + 1}
+                        {j + 1}
                       </Styled.WeightKey>
 
                       <Styled.WeightValue>
