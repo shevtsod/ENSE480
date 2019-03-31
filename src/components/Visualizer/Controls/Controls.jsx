@@ -94,10 +94,10 @@ const Controls = ({
 
           <Styled.SecondaryButton
             onClick={() => {
-              if (layers.length - 2 >= 6) return
+              if (layers.length - 2 >= 5) return
               handleAddLayer()
             }}
-            disabled={layers.length - 2 >= 6}
+            disabled={layers.length - 2 >= 5}
           >
             <Styled.SecondaryButtonIcon>
               <IoIosAdd size={24} />
