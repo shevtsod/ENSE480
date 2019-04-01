@@ -9,11 +9,11 @@ export const ActivationFunctions = {
 // Error functions for back-propagation
 export const ErrorFunctions = {
   square: {
-    func: (output, target) => 0.5 * Math.pow(target - output, 2),
-    der: (output, target) => target - output
+    func: (output, target) => 0.5 * Math.pow(output - target, 2),
+    der: (output, target) => output - target
   },
   linear: {
-    func: (output, target) => target - output,
+    func: (output, target) => output - target,
     der: () => 1
   }
 }

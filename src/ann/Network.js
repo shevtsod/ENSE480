@@ -206,7 +206,7 @@ export default class Network {
       node.error =
         this.error.func(node.output, target) *
         this.error.der(node.output, target)
-      node.bias += this.learningRate * node.error
+      node.bias -= this.learningRate * node.error
 
       // Update global network error
       this.globalError += Math.abs(node.error)
@@ -228,14 +228,14 @@ export default class Network {
 
         // Calculate error and bias
         prevNode.error = sum * this.error.der(prevNode.output, target)
-        prevNode.bias += this.learningRate * prevNode.error
+        prevNode.bias -= this.learningRate * prevNode.error
 
         // Update global network error
         this.globalError += Math.abs(prevNode.error)
 
         // Update weights (w = w + lr * en * output)
         layer.forEach((node, k) => {
-          weights[k][j] += this.learningRate * node.error * prevNode.output
+          weights[k][j] -= this.learningRate * node.error * prevNode.output
         })
       })
     }
