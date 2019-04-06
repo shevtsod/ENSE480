@@ -255,13 +255,30 @@ export default class Network {
       value: input.value
     }))
 
+    const logs = []
+
     // For each input, feedforward and back-propagate
-    scaledInputs.forEach(input => {
+    scaledInputs.forEach((input, i) => {
       // Feed input features into network
       this.feedForward([input.x, input.y])
       // Pass expected output to network to calc error
       this.backPropagate(input.value)
+
+      // Log inputs and output
+      logs.push({
+        x: inputs[i].x,
+        y: inputs[i].y,
+        expectedOutput: input.value,
+        actualOutput: this.outputLayer[0].output,
+        error: this.outputLayer[0].output - input.value
+      })
     })
+
+    // Print the log to the console
+    console.clear()
+    console.table({ epoch: this.epoch })
+    console.table(logs)
+
     this.epoch++
   }
 }
