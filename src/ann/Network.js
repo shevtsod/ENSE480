@@ -198,7 +198,7 @@ export default class Network {
     // Reset global network error
     this.globalError = 0
 
-    // Compute output layer error (error = target - output)
+    // Compute output layer error (error = 1/2(output - target)^2)
     // For the output node, use the network's error function for the derivative
     this.outputLayer.forEach(node => {
       // Calculate error and bias
